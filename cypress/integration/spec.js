@@ -9,5 +9,16 @@ Cypress.on('window:before:load', (win) => {
 
 it('fetches todo', () => {
   cy.visit('index.html')
+  cy.server()
+  cy.route('/todos/1').as('todo')
   cy.get('#todo').click()
+  cy.wait('@todo')
+    .its('response.body')
+    .should(spok({
+      $topic: 'response',
+    userId: 1,
+    id: 1,
+      title: spok.string,
+    completed: false
+  }))
 })
