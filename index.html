@@ -1,0 +1,12 @@
+<body>
+  <button id="todo">Get todo</button>
+  <script src="https://unpkg.com/unfetch/polyfill"></script>
+  <script>
+    document.getElementById('todo').addEventListener('click', () => {
+      console.log('fetching new todo')
+      fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(response => response.json())
+        .then(json => console.log(json))
+    })
+  </script>
+</body>

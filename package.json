@@ -1,0 +1,26 @@
+{
+  "name": "cy-spok-example",
+  "version": "1.0.0",
+  "description": "Example asserting network calls using cy-spok and Cypress E2E tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/cy-spok-example.git"
+  },
+  "author": "Gleb Bahmutov <gleb.bahmutov@mail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/cy-spok-example/issues"
+  },
+  "homepage": "https://github.com/bahmutov/cy-spok-example#readme",
+  "devDependencies": {
+    "cy-spok": "1.2.3",
+    "cypress": "3.8.0"
+  },
+  "dependencies": {
+    "json-server": "0.15.1"
+  }
+}
