@@ -16,9 +16,9 @@ it('fetches todo', () => {
     .its('response.body')
     .should(spok({
       $topic: 'response',
-    userId: 1,
-    id: 1,
-      title: spok.string,
-    completed: false
-  }))
+      userId: 1,
+      id: 1,
+        title: spok.string,
+      completed: false
+    }))
 })
