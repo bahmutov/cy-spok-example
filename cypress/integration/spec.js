@@ -18,7 +18,7 @@ it('fetches todo', () => {
       $topic: 'response',
       userId: 1,
       id: 1,
-        title: spok.string,
+      title: spok.string,
       completed: false
     }))
 })
