@@ -1,16 +1,9 @@
 /// <reference types="cypress" />
 import spok from 'cy-spok'
 
-Cypress.on('window:before:load', (win) => {
-  // force fetch-polyfill to use XMLHttpRequest object
-  // that Cypress can spy / stub right now
-  delete win.fetch
-})
-
 it('fetches todo', () => {
   cy.visit('index.html')
-  cy.server()
-  cy.route('/todos/1').as('todo')
+  cy.intercept('/todos/1').as('todo')
   cy.get('#todo').click()
   cy.wait('@todo')
     .its('response.body')
@@ -21,4 +14,15 @@ it('fetches todo', () => {
       title: spok.string,
       completed: false
     }))
+
+  // "normal" deep.include assertion can only confirm
+  // the user and the id properties
+  cy.get('@todo')
+    .its('response.body')
+    .should('deep.include', {
+      userId: 1,
+      id: 1
+    })
+    // then we can get the title and confirm it is a string
+    .its('title').should('be.a', 'string')
 })
