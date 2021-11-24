@@ -18,6 +18,6 @@
   "homepage": "https://github.com/bahmutov/cy-spok-example#readme",
   "devDependencies": {
     "cy-spok": "1.4.1",
-    "cypress": "9.0.0"
+    "cypress": "9.1.0"
   }
 }
